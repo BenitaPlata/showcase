@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Overlay</title>
+
+    <link rel="stylesheet" href="../css/06-color-overlay.css" />
+
+  </head>
+
+  <body>
+    <!-- Botón modo oscuro -->
+    <button class="dark-btn" id="darkToggle">🌙 Modo oscuro</button>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Color Overlay</h1>
+
+        <p>
+          Un recubrimiento de color suave que aparece sobre la imagen al
+          interactuar.
+        </p>
+
+        <a class="volver-btn" href="../index.html">
+          ← Volver a la página principal
+        </a>
+      </div>
+    </section>
+
+    <!-- GALERÍA OVERLAY -->
+    <section class="overlay-gallery">
+      <div class="overlay-card">
+        <img src="../img/overlay1.webp" alt="Imagen 1" />
+        <div class="overlay-color"></div>
+        <p>🌸 Estilo rosa pastel</p>
+      </div>
+
+      <div class="overlay-card">
+        <img src="../img/overlay2.webp" alt="Imagen 2" />
+        <div class="overlay-color"></div>
+        <p>💙 Tono frío elegante</p>
+      </div>
+
+      <div class="overlay-card">
+        <img src="../img/overlay3.webp" alt="Imagen 3" />
+        <div class="overlay-color"></div>
+        <p>🌿 Sensación natural</p>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <p>Hecho con ❤️ y CSS muy actual <span>Showcase CSS</span></p>
+    </footer>
+
+    <!-- SCRIPT MODO OSCURO -->
+    <script>
+      const toggle = document.getElementById("darkToggle");
+
+      toggle.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+
+        toggle.textContent = document.body.classList.contains("dark")
+          ? "🌞 Modo claro"
+          : "🌙 Modo oscuro";
+      });
+    </script>
+  </body>
+</html>

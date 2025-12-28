@@ -1,0 +1,148 @@
+/* ========= VARIABLES ========= */
+:root{
+  --bg:#F1E3E8;
+  --overlay: rgba(255,255,255,.6);
+  --card: rgba(255,255,255,.85);
+  --card-strong: rgba(245,225,232,.95);
+  --text:#2F2F2F;
+}
+
+/* ========= MODO OSCURO ========= */
+body.dark{
+  --bg:#1d1b1c;
+  --overlay: rgba(0,0,0,.6);
+  --card: rgba(80,50,65,.95);
+  --card-strong: rgba(120,70,100,.95);
+  --text:#fafafa;
+}
+
+body.dark .hero-content{
+  background: linear-gradient(
+    to bottom right,
+    rgba(40,40,40,.75),
+    rgba(40,40,40,.55)
+  );
+  color:white;
+}
+
+body.dark .hero p{ color:#ddd; }
+
+body{
+  margin:0;
+  font-family:system-ui,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+/* ========= BOTÓN MODO OSCURO ========= */
+.dark-btn{
+  position:fixed;
+  top:14px;
+  right:20px;
+  padding:10px 16px;
+  border-radius:18px;
+  border:none;
+  background:rgba(255,255,255,.7);
+  cursor:pointer;
+  box-shadow:0 10px 25px rgba(0,0,0,.1);
+  backdrop-filter: blur(6px);
+}
+body.dark .dark-btn{ background:rgba(50,50,50,.75); color:#eee; }
+
+
+/* ========= HERO ========= */
+.hero{
+  margin-top:80px;
+  display:flex;
+  justify-content:center;
+}
+.hero-content{
+  max-width:850px;
+  text-align:center;
+  background:var(--card);
+  backdrop-filter:blur(10px);
+  padding:40px 50px;
+  border-radius:22px;
+  box-shadow:0 15px 35px rgba(0,0,0,.12);
+}
+.volver-btn{
+  display:inline-block;
+  margin-top:16px;
+  padding:10px 16px;
+  border-radius:12px;
+  text-decoration:none;
+  background:#CFA6B2;
+  color:white;
+}
+
+
+/* ========= BEFORE AFTER ========= */
+.contenedor{
+  max-width:1100px;
+  margin:40px auto 120px;
+}
+
+.before-after{
+  position:relative;
+  width:100%;
+  aspect-ratio: 16 / 9;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 12px 35px rgba(0,0,0,.15);
+}
+
+.img{
+  position:absolute;
+  inset:0;
+  background-size:cover;
+  background-position:center;
+}
+
+/* coloca tus imágenes */
+.img-before{
+  background-image:url("../img/before.webp");
+}
+.img-after{
+  background-image:url("../img/after.webp");
+  clip-path: inset(0 50% 0 0);
+  transition:clip-path .25s ease;
+   background-position: center -100px; /*mueve la imagen verticalmente */
+
+}
+
+
+/* ========= SLIDER ========= */
+.slider{
+  position:absolute;
+  bottom:20px;
+  left:50%;
+  transform:translateX(-50%);
+  width:55%;
+  -webkit-appearance:none;
+  appearance:none;
+  height:6px;
+  border-radius:6px;
+  background:#ffffffaa;
+  cursor:pointer;
+}
+
+/* bolita */
+.slider::-webkit-slider-thumb{
+  -webkit-appearance:none;
+  width:22px;
+  height:22px;
+  border-radius:50%;
+  background:#cfa6b2;
+  border:3px solid white;
+  box-shadow:0 4px 10px rgba(0,0,0,.25);
+}
+
+
+/* ========= FOOTER ========= */
+.site-footer{
+  text-align:center;
+  padding:30px 10px;
+  background: var(--overlay);
+  box-shadow: 0 -8px 20px rgba(0,0,0,.08);
+}
+.site-footer span{ color:#b2506c; }

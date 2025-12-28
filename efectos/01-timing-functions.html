@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Timing Functions</title>
+    <link rel="stylesheet" href="../css/01-timing-functions.css" />
+    
+  </head>
+
+  <body>
+    <button class="dark-btn" id="modoBtn">🌙 Modo oscuro</button>
+
+    <header class="hero">
+      <div class="hero-content">
+        <h1>Timing Functions en CSS</h1>
+
+        <p>
+          Observa cómo cambia la aceleración de una animación según la función
+          aplicada. Pasa el ratón por encima de cada tarjeta.
+        </p>
+
+        <a class="volver-btn" href="../index.html"
+          >← Volver a la página principal</a
+        >
+      </div>
+    </header>
+
+    <section class="explicacion">
+      <p><strong>linear:</strong> velocidad constante.</p>
+      <p><strong>ease:</strong> empieza y termina suave.</p>
+      <p><strong>ease-in:</strong> arranca lenta y acelera.</p>
+      <p><strong>ease-out:</strong> comienza rápido y frena.</p>
+      <p><strong>ease-in-out:</strong> suave al inicio y al final.</p>
+    </section>
+
+    <section class="contenedor">
+      <div class="card linear">
+        <span class="bola"></span>
+        <p>linear</p>
+      </div>
+
+      <div class="card ease">
+        <span class="bola"></span>
+        <p>ease</p>
+      </div>
+
+      <div class="card ease-in">
+        <span class="bola"></span>
+        <p>ease-in</p>
+      </div>
+
+      <div class="card ease-out">
+        <span class="bola"></span>
+        <p>ease-out</p>
+      </div>
+
+      <div class="card ease-in-out">
+        <span class="bola"></span>
+        <p>ease-in-out</p>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <p>Hecho con ❤️ y CSS muy actual <span>Showcase CSS</span></p>
+    </footer>
+
+    <script>
+      const btn = document.getElementById("modoBtn");
+      btn.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+        btn.textContent = document.body.classList.contains("dark")
+          ? "☀️ Modo claro"
+          : "🌙 Modo oscuro";
+      });
+    </script>
+  </body>
+</html>

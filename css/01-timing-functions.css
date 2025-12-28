@@ -1,0 +1,227 @@
+/* ========= COLORES MODO CLARO ========= */
+:root{
+  --bg:#F1E3E8;
+  --overlay: rgba(255,255,255,.6);
+  --card: rgba(255,255,255,.85);
+  --card-strong: rgba(245,225,232,.95);
+  --text:#2F2F2F;
+}
+
+/* ========= MODO OSCURO ========= */
+body.dark{
+  --bg:#1d1b1c;
+  --overlay: rgba(0,0,0,.6);
+  --card: rgba(80,50,65,.95);
+  --card-strong: rgba(120,70,100,.95);
+  --text:#fafafa;
+}
+
+body{
+  margin:0;
+  font-family: system-ui;
+  background:var(--bg);
+  color:var(--text);
+}
+
+
+/* ========= BOTÓN MODO OSCURO ========= */
+.dark-btn{
+  position:fixed;
+  top:14px;
+  right:20px;
+  padding:10px 16px;
+  border-radius:18px;
+  border:none;
+  cursor:pointer;
+  background:rgba(255,255,255,.7);
+  box-shadow:0 10px 25px rgba(0,0,0,.1);
+  backdrop-filter: blur(6px);
+}
+
+body.dark .dark-btn{
+  background:rgba(50,50,50,.75);
+  color:#eee;
+  font-size:16px;
+}
+
+
+/* ========= HEADER IGUAL QUE INDEX ========= */
+.hero{
+  margin-top:80px;
+  display:flex;
+  justify-content:center;
+}
+
+.hero-content{
+  max-width:900px;
+  text-align:center;
+  background:var(--card);
+  backdrop-filter:blur(10px);
+  padding:40px 50px;
+  border-radius:22px;
+  box-shadow:0 15px 35px rgba(0,0,0,.12);
+}
+
+.hero-content h1{
+  font-size: 42px;
+  font-weight: 800;
+}
+
+.hero-content p{
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+
+
+/* botón volver */
+.volver-btn{
+  display:inline-block;
+  margin-top:18px;
+  padding:10px 16px;
+  border-radius:12px;
+  text-decoration:none;
+  background:#CFA6B2;
+  color:white;
+}
+
+body.dark .volver-btn{
+  background:#b2506c;
+}
+
+
+/* ========= EXPLICACIÓN ========= */
+
+.explicacion{
+  max-width: 850px;
+  margin: 25px auto;
+  text-align: center;
+  line-height: 1.8;
+  font-size: 18px;   /* ⬅ MISMO TAMAÑO QUE EN EL INDEX */
+}
+
+.explicacion strong{
+  font-weight: 800;
+}
+
+
+
+/* ========= TARJETAS ========= */
+.contenedor{
+  max-width:900px;
+  margin:20px auto 120px;
+}
+
+.card{
+  background:var(--card);
+  padding:22px;
+  border-radius:18px;
+  margin:16px 0;
+  position:relative;
+}
+
+.card p{
+  text-align:center;
+   font-size: 1.3rem; 
+  font-weight:700;
+}
+
+.bola{
+  width:18px;
+  height:18px;
+  border-radius:50%;
+  background:#9c2f4a;
+  position:absolute;
+  top:50%;
+  left:10px;
+  transform:translateY(-50%);
+}
+
+.card:hover .bola{
+  animation:mover 1.8s forwards;
+}
+
+.linear:hover .bola{ animation-timing-function: linear; }
+.ease:hover .bola{ animation-timing-function: ease; }
+.ease-in:hover .bola{ animation-timing-function: ease-in; }
+.ease-out:hover .bola{ animation-timing-function: ease-out; }
+.ease-in-out:hover .bola{ animation-timing-function: ease-in-out; }
+
+@keyframes mover{
+  from{ left:10px; }
+  to{ left: calc(100% - 30px); }
+}
+
+
+/* ========= FOOTER ========= */
+.site-footer{
+  text-align:center;
+  padding:30px 10px;
+  background: var(--overlay);
+  box-shadow: 0 -8px 20px rgba(0,0,0,.08);
+}
+
+.site-footer span{
+  color:#b2506c;
+}
+
+/* =========
+  RESPONSIVE
+========= */
+@media (max-width: 768px){
+
+  .hero{
+    margin-top: 60px;
+  }
+
+  .hero-content{
+    padding: 28px 22px;
+  }
+
+  .hero-content h1{
+    font-size: 28px;
+  }
+
+  .hero-content p{
+    font-size: 16px;
+  }
+
+  .explicacion{
+    font-size: 16px;
+    padding: 0 12px;
+  }
+
+  .contenedor{
+    margin: 10px 12px 90px;
+  }
+
+  .card{
+    padding: 18px;
+  }
+
+  .volver-btn{
+    padding: 10px 14px;
+    font-size: 15px;
+  }
+
+  .dark-btn{
+    top: 10px;
+    right: 10px;
+  }
+}
+
+
+@media (max-width: 480px){
+
+  .hero-content h1{
+    font-size: 24px;
+  }
+
+  .explicacion{
+    font-size: 15px;
+  }
+
+  .card p{
+    font-size: 15px;
+  }
+}

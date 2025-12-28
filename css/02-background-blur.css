@@ -1,0 +1,225 @@
+/* =========
+ VARIABLES (igual que Timing)
+========= */
+:root{
+  --bg:#F1E3E8;
+  --overlay: rgba(255,255,255,.6);
+  --card: rgba(255,255,255,.85);
+  --card-strong: rgba(245,225,232,.95);
+  --text:#2F2F2F;
+}
+
+/* =========
+ MODO OSCURO
+========= */
+body.dark{
+  --bg:#1d1b1c;
+  --overlay: rgba(0,0,0,.6);
+  --card: rgba(80,50,65,.95);
+  --card-strong: rgba(120,70,100,.95);
+  --text:#fafafa;
+}
+
+body.dark .hero-content{
+  background: linear-gradient(
+    to bottom right,
+    rgba(40,40,40,.75),
+    rgba(40,40,40,.55)
+  );
+  color:white;
+}
+
+body.dark .hero p{
+  color:#ddd;
+}
+
+/* =========
+ GENERAL
+========= */
+body{
+  margin:0;
+  font-family:system-ui,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+/* botón modo oscuro */
+.dark-btn{
+  position:fixed;
+  top:14px;
+  right:20px;
+  padding:10px 16px;
+  border-radius:18px;
+  border:none;
+  background:rgba(255,255,255,.7);
+  cursor:pointer;
+  box-shadow:0 10px 25px rgba(0,0,0,.1);
+  backdrop-filter: blur(6px);
+}
+body.dark .dark-btn{
+  background:rgba(50,50,50,.75);
+  color:#eee;
+}
+
+/* ========= HEADER IGUAL QUE INDEX ========= */
+.hero{
+  margin-top:80px;
+  display:flex;
+  justify-content:center;
+}
+
+.hero-content{
+  max-width:900px;
+  text-align:center;
+  background:var(--card);
+  backdrop-filter:blur(10px);
+  padding:40px 50px;
+  border-radius:22px;
+  box-shadow:0 15px 35px rgba(0,0,0,.12);
+}
+
+.hero-content h1{
+  font-size: 42px;
+  font-weight: 800;
+}
+
+.hero-content p{
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+
+
+/* botón volver */
+.volver-btn{
+  display:inline-block;
+  margin-top:18px;
+  padding:10px 16px;
+  border-radius:12px;
+  text-decoration:none;
+  background:#CFA6B2;
+  color:white;
+}
+
+body.dark .volver-btn{
+  background:#b2506c;
+}
+
+
+
+/* =========
+ GALERÍA BLUR 
+========= */
+
+.galeria-blur{
+  max-width:900px;
+  margin:30px auto 120px;
+  display:grid;
+  grid-template-columns: 1fr;
+  gap:28px;
+}
+
+.blur-card{
+  position:relative;
+  overflow:hidden;
+  border-radius:18px;
+  box-shadow:0 10px 25px rgba(0,0,0,.12);
+}
+
+/* tamaño  nítido */
+.blur-card img{
+  width:100%;
+  height:600px;    
+  object-fit:cover; 
+  display:block;
+  transition: filter .4s ease, transform .35s ease;
+}
+
+.blur-card:hover img{
+  filter: blur(6px) brightness(.9);
+  transform: scale(1.03);
+}
+
+
+/* texto encima */
+.overlay{
+  position:absolute;
+  inset:0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+
+  color:white;
+  font-weight:700;
+  opacity:0;
+  background:rgba(0,0,0,.25);
+  transition:.4s ease;
+}
+
+.blur-card:hover .overlay{
+  opacity:1;
+}
+
+/* =========
+ RESPONSIVE
+========= */
+@media (max-width:900px){
+  .galeria-blur{
+    grid-template-columns: 1fr;
+  }
+
+  .blur-card img{
+    height:260px;
+  }
+}
+
+/* ========= MODO OSCURO ========= */
+body.dark{
+  --bg:#1d1b1c;
+  --overlay: rgba(0,0,0,.6);
+  --card: rgba(80,50,65,.95);
+  --card-strong: rgba(120,70,100,.95);
+  --text:#fafafa;
+}
+
+body{
+  margin:0;
+  font-family: system-ui;
+  background:var(--bg);
+  color:var(--text);
+}
+
+
+/* ========= BOTÓN MODO OSCURO ========= */
+.dark-btn{
+  position:fixed;
+  top:14px;
+  right:20px;
+  padding:10px 16px;
+  border-radius:18px;
+  border:none;
+  cursor:pointer;
+  background:rgba(255,255,255,.7);
+  box-shadow:0 10px 25px rgba(0,0,0,.1);
+  backdrop-filter: blur(6px);
+}
+
+body.dark .dark-btn{
+  background:rgba(50,50,50,.75);
+  color:#eee;
+  font-size:16px;
+}
+/* =========
+ FOOTER
+========= */
+.site-footer{
+  text-align:center;
+  padding:30px 10px;
+  background: var(--overlay);
+  box-shadow: 0 -8px 20px rgba(0,0,0,.08);
+}
+
+.site-footer span{
+  color:#b2506c;
+}

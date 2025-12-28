@@ -1,0 +1,174 @@
+/* =========================
+   VARIABLES (modo claro)
+========================= */
+:root{
+  --bg:#F1E3E8;
+  --overlay: rgba(255,255,255,.6);
+  --card: rgba(255,255,255,.85);
+  --card-strong: rgba(245,225,232,.95);
+  --text:#2F2F2F;
+}
+
+/* =========================
+   MODO OSCURO
+========================= */
+body.dark{
+  --bg:#1d1b1c;
+  --overlay: rgba(0,0,0,.6);
+  --card: rgba(80,50,65,.95);
+  --card-strong: rgba(120,70,100,.95);
+  --text:#fafafa;
+}
+
+/* =========================
+   BASE
+========================= */
+body{
+  margin:0;
+  font-family:system-ui, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+/* =========================
+   BOTÓN MODO OSCURO
+========================= */
+.dark-btn{
+  position:fixed;
+  top:14px;
+  right:20px;
+  padding:10px 16px;
+  border-radius:18px;
+  border:none;
+  background:rgba(255,255,255,.7);
+  cursor:pointer;
+  box-shadow:0 10px 25px rgba(0,0,0,.1);
+  backdrop-filter: blur(6px);
+}
+
+body.dark .dark-btn{
+  background:rgba(50,50,50,.75);
+  color:#eee;
+}
+
+/* =========================
+   HERO
+========================= */
+.hero{
+  margin-top:80px;
+  display:flex;
+  justify-content:center;
+}
+
+.hero-content{
+  max-width:900px;
+  text-align:center;
+  background:var(--card);
+  backdrop-filter:blur(10px);
+  padding:40px 50px;
+  border-radius:22px;
+  box-shadow:0 15px 35px rgba(0,0,0,.12);
+}
+
+.volver-btn{
+  margin-top:16px;
+  display:inline-block;
+  padding:10px 16px;
+  border-radius:12px;
+  background:#CFA6B2;
+  color:white;
+  text-decoration:none;
+}
+
+/* =========================
+   GRID DE TARJETAS
+========================= */
+.animacion-grid{
+  max-width:1100px;
+  margin:50px auto 120px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:34px;
+}
+
+/* =========================
+   TARJETAS + ANIMACIÓN
+========================= */
+.anim-card{
+  background:var(--card);
+  padding:30px;
+  border-radius:20px;
+  text-align:center;
+  box-shadow:0 18px 38px rgba(0,0,0,.14);
+
+  opacity:0;
+  transform: translateY(50px) scale(.95);
+  animation: fadeSlide 1.1s ease-out forwards;
+
+  transition: transform .4s ease, box-shadow .4s ease;
+}
+
+/* retraso escalonado */
+.anim-card:nth-child(1){ animation-delay:.15s }
+.anim-card:nth-child(2){ animation-delay:.40s }
+.anim-card:nth-child(3){ animation-delay:.65s }
+
+/* hover bonito */
+.anim-card:hover{
+  transform: translateY(-6px) scale(1.03);
+  box-shadow:0 28px 55px rgba(0,0,0,.22);
+}
+
+/* iconos grandes opcionales */
+.icon.big{
+  font-size:64px;
+  display:block;
+  margin-bottom:14px;
+}
+
+/* =========================
+   ANIMACIÓN SUAVE
+========================= */
+@keyframes fadeSlide{
+  from{
+    opacity:0;
+    transform: translateY(60px) scale(.9);
+  }
+  to{
+    opacity:1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media(max-width:950px){
+  .animacion-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:560px){
+  .animacion-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero-content{
+    padding:28px;
+  }
+}
+
+/* =========================
+   FOOTER
+========================= */
+.site-footer{
+  text-align:center;
+  padding:30px 10px;
+  background:var(--overlay);
+  box-shadow:0 -8px 20px rgba(0,0,0,.08);
+}
+
+.site-footer span{
+  color:#b2506c;
+}

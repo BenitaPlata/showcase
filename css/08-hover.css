@@ -1,0 +1,160 @@
+/* ========= VARIABLES ========= */
+:root{
+  --bg:#F1E3E8;
+  --overlay: rgba(255,255,255,.6);
+  --card: rgba(255,255,255,.85);
+  --text:#2F2F2F;
+}
+
+body.dark{
+  --bg:#1d1b1c;
+  --overlay: rgba(0,0,0,.6);
+  --card: rgba(80,50,65,.95);
+  --text:#fafafa;
+}
+
+body{
+  margin:0;
+  font-family:system-ui,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+/* ==== DARK BUTTON ==== */
+.dark-btn{
+  position:fixed;
+  top:14px;
+  right:20px;
+  padding:10px 16px;
+  border-radius:18px;
+  border:none;
+  background:rgba(255,255,255,.7);
+  cursor:pointer;
+  box-shadow:0 10px 25px rgba(0,0,0,.1);
+  backdrop-filter: blur(6px);
+}
+
+body.dark .dark-btn{
+  background:rgba(50,50,50,.75);
+  color:#eee;
+}
+
+/* ========= HERO ========= */
+.hero{
+  margin-top:80px;
+  display:flex;
+  justify-content:center;
+}
+
+.hero-content{
+  max-width:900px;
+  text-align:center;
+  background:var(--card);
+  backdrop-filter:blur(10px);
+  padding:40px 50px;
+  border-radius:22px;
+  box-shadow:0 15px 35px rgba(0,0,0,.12);
+}
+
+.volver-btn{
+  display:inline-block;
+  margin-top:16px;
+  padding:10px 16px;
+  border-radius:12px;
+  text-decoration:none;
+  background:#CFA6B2;
+  color:white;
+}
+
+/* ========= GRID ========= */
+.hover-grid{
+  max-width:1100px;
+  margin:50px auto 120px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:34px;
+}
+
+/* ========= TARJETAS CON IMAGEN ========= */
+.hover-img{
+  position:relative;
+  border-radius:22px;
+  overflow:hidden;
+  box-shadow:0 18px 40px rgba(0,0,0,.15);
+  cursor:pointer;
+
+  height: 480px; 
+}
+
+.hover-img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition:.45s ease;
+}
+
+
+
+/* TEXTO */
+.caption{
+  position:absolute;
+  bottom:16px;
+  left:18px;
+  color:#fff;
+  font-weight:700;
+  text-shadow:0 8px 18px rgba(0,0,0,.5);
+}
+
+/* ===== EFECTO 1 — ELEVACIÓN ===== */
+.efecto1:hover{
+  transform:translateY(-10px);
+  box-shadow:0 35px 60px rgba(0,0,0,.28);
+}
+
+/* ===== EFECTO 2 — COLOR ===== */
+.efecto2::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:rgba(198,111,145,.45);
+  opacity:0;
+  transition:.35s ease;
+  mix-blend-mode:multiply;
+}
+.efecto2:hover::after{
+  opacity:1;
+}
+
+/* ===== EFECTO 3 — ZOOM ===== */
+.efecto3:hover img{
+  transform:scale(1.8);
+}
+
+/* ========= RESPONSIVE ========= */
+@media(max-width:900px){
+  .hover-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:560px){
+  .hover-grid{
+    grid-template-columns:1fr;
+  }
+  .hero-content{
+    padding:28px;
+  }
+}
+
+/* ========= FOOTER ========= */
+.site-footer{
+  text-align:center;
+  padding:30px 10px;
+  background:var(--overlay);
+  box-shadow:0 -8px 20px rgba(0,0,0,.08);
+}
+
+.site-footer span{
+  color:#b2506c;
+}

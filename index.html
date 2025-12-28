@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Showcase CSS</title>
+
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="icon" href="img/icon.png" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+
+  <button id="top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    ↑
+  </button>
+
+  <body>
+    <nav>
+      <button id="darkToggle" class="dark-btn">🌙 Modo oscuro</button>
+    </nav>
+
+    <header class="hero">
+      <div class="hero-content">
+        <h1>Showcase de Efectos con CSS</h1>
+        <p>
+          Este proyecto recoge distintos ejemplos prácticos de animaciones y
+          efectos modernos con CSS. Cada tarjeta te lleva a una página donde
+          puedes ver el efecto funcionando y entender cómo se crea.
+        </p>
+      </div>
+    </header>
+
+    <main class="grid">
+      <a class="card" href="efectos/01-timing-functions.html">
+        <h2><i class="fa-solid fa-stopwatch"></i> Timing Functions</h2>
+        <p>Cómo cambia la velocidad de una animación según la curva elegida.</p>
+      </a>
+
+      <a class="card" href="efectos/02-background-blur.html">
+        <h2><i class="fa-solid fa-droplet"></i> Background Blur</h2>
+        <p>Desenfoque dinámico del fondo al interactuar.</p>
+      </a>
+
+      <a class="card" href="efectos/03-text-mask-city.html">
+        <h2><i class="fa-solid fa-image"></i> Texto con Imagen</h2>
+        <p>El texto se rellena usando una imagen como máscara.</p>
+      </a>
+
+      <a class="card" href="efectos/04-slider.html">
+        <h2><i class="fa-solid fa-images"></i> Slider sin JavaScript</h2>
+        <p>Galería interactiva usando solo CSS.</p>
+      </a>
+
+      <a class="card" href="efectos/05-before-after.html">
+        <h2><i class="fa-solid fa-arrows-left-right"></i> Before & After</h2>
+        <p>Comparación visual entre dos imágenes.</p>
+      </a>
+
+      <a class="card" href="efectos/06-color-overlay.html">
+        <h2><i class="fa-solid fa-palette"></i> Color Overlay</h2>
+        <p>Capas de color y fusiones visuales sobre imágenes.</p>
+      </a>
+
+      <a class="card" href="efectos/07-animation.html">
+        <h2><i class="fa-solid fa-wave-square"></i> Animación CSS</h2>
+        <p>Transformaciones y movimiento con keyframes.</p>
+      </a>
+
+      <a class="card" href="efectos/08-hover.html">
+        <h2><i class="fa-solid fa-hand-pointer"></i> Hover Effects</h2>
+        <p>Efectos al pasar el cursor sobre elementos.</p>
+      </a>
+    </main>
+
+    <section class="hero contacto">
+      <div class="hero-content">
+        <h2><i class="fa-solid fa-comment-dots"></i> Contacto</h2>
+
+        <p>
+          Si quieres hablar conmigo sobre prácticas, proyectos o colaborar
+          juntos, puedes contactar conmigo a través de mi perfil de LinkedIn.
+        </p>
+
+        <a
+          class="volver-btn"
+          href="https://www.linkedin.com/in/benita-plata/"
+          target="_blank"
+        >
+          <i class="fa-brands fa-linkedin"></i> Visitar mi LinkedIn
+        </a>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <p>Hecho con ❤️ y CSS muy actual <strong>Showcase CSS</strong></p>
+    </footer>
+
+    <script>
+      const toggle = document.getElementById("darkToggle");
+      const body = document.body;
+
+      function updateButton() {
+        if (body.classList.contains("dark")) {
+          toggle.textContent = "☀️ Modo claro";
+        } else {
+          toggle.textContent = "🌙 Modo oscuro";
+        }
+      }
+
+      if (localStorage.getItem("darkMode") === "true") {
+        body.classList.add("dark");
+      }
+
+      updateButton();
+
+      toggle.addEventListener("click", () => {
+        body.classList.toggle("dark");
+
+        const isDark = body.classList.contains("dark");
+        localStorage.setItem("darkMode", isDark);
+
+        updateButton();
+      });
+    </script>
+  </body>
+</html>

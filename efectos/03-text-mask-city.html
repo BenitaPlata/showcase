@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Texto con Imagen</title>
+
+    <link rel="stylesheet" href="../css/03-text-mask-city.css" />
+   
+  </head>
+
+  <body>
+    <!-- Botón modo oscuro -->
+    <button class="dark-btn" id="darkToggle">🌙 Modo oscuro</button>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Texto con Imagen</h1>
+
+        <p>El texto se rellena usando una imagen como máscara.</p>
+
+        <a class="volver-btn" href="../index.html">
+          ← Volver a la página principal
+        </a>
+      </div>
+    </section>
+
+    <!-- EFECTO -->
+    <section class="contenedor">
+      <div class="text-mask">SUEÑA<br />LUCHA<br />LOGRA</div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <p>Hecho con ❤️ y CSS muy actual <span>Showcase CSS</span></p>
+    </footer>
+
+    <!-- SCRIPT MODO OSCURO -->
+    <script>
+      const toggle = document.getElementById("darkToggle");
+      toggle.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+        toggle.textContent = document.body.classList.contains("dark")
+          ? "🌞 Modo claro"
+          : "🌙 Modo oscuro";
+      });
+    </script>
+  </body>
+</html>

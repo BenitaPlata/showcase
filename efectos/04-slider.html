@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slider sin JavaScript</title>
+
+  <link rel="stylesheet" href="../css/04-slider.css">
+  
+
+</head>
+
+<body>
+
+  <!-- Botón modo oscuro -->
+  <button class="dark-btn" id="darkToggle">🌙 Modo oscuro</button>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Slider sin JavaScript</h1>
+
+      <p>
+        Galería interactiva creada solo con HTML y CSS. Haz clic en los controles para cambiar de imagen.
+      </p>
+
+      <a class="volver-btn" href="../index.html">
+        ← Volver a la página principal
+      </a>
+    </div>
+  </section>
+
+
+  <!-- SLIDER -->
+  <section class="slider">
+
+    <!-- Controles -->
+    <input type="radio" name="slide" id="s1" checked>
+    <input type="radio" name="slide" id="s2">
+    <input type="radio" name="slide" id="s3">
+
+    <!-- Imágenes -->
+    <div class="slides">
+
+      <div class="img">
+        <img src="../img/slide1.webp" alt="">
+      </div>
+
+      <div class="img">
+        <img src="../img/slide2.webp" alt="">
+      </div>
+
+      <div class="img">
+        <img src="../img/slide3.webp" alt="">
+      </div>
+
+     
+
+    </div>
+
+    <!-- Botones -->
+    <div class="nav">
+      <label for="s1"></label>
+      <label for="s2"></label>
+      <label for="s3"></label>
+    
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>Hecho con ❤️ y CSS muy actual <span>Showcase CSS</span></p>
+  </footer>
+
+
+  <!-- SCRIPT MODO OSCURO -->
+  <script>
+    const toggle = document.getElementById("darkToggle");
+    toggle.addEventListener("click",()=>{
+      document.body.classList.toggle("dark");
+      toggle.textContent =
+        document.body.classList.contains("dark")
+        ? "🌞 Modo claro"
+        : "🌙 Modo oscuro";
+    });
+  </script>
+
+</body>
+</html>

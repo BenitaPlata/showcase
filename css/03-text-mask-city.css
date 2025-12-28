@@ -1,0 +1,149 @@
+/* =========
+ VARIABLES
+========= */
+:root{
+  --bg:#F1E3E8;
+  --overlay: rgba(255,255,255,.6);
+  --card: rgba(255,255,255,.85);
+  --card-strong: rgba(245,225,232,.95);
+  --text:#2F2F2F;
+}
+
+/* =========
+ MODO OSCURO
+========= */
+body.dark{
+  --bg:#1d1b1c;
+  --overlay: rgba(0,0,0,.6);
+  --card: rgba(80,50,65,.95);
+  --card-strong: rgba(120,70,100,.95);
+  --text:#fafafa;
+}
+
+body.dark .hero-content{
+  background: linear-gradient(
+    to bottom right,
+    rgba(40,40,40,.75),
+    rgba(40,40,40,.55)
+  );
+  color:white;
+}
+
+body.dark .hero p{
+  color:#ddd;
+}
+
+/* =========
+ GENERAL
+========= */
+body{
+  margin:0;
+  font-family:system-ui,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+/* Botón modo oscuro */
+.dark-btn{
+  position:fixed;
+  top:14px;
+  right:20px;
+  padding:10px 16px;
+  border-radius:18px;
+  border:none;
+  background:rgba(255,255,255,.7);
+  cursor:pointer;
+  box-shadow:0 10px 25px rgba(0,0,0,.1);
+  backdrop-filter: blur(6px);
+}
+body.dark .dark-btn{
+  background:rgba(50,50,50,.75);
+  color:#eee;
+}
+
+/* =========
+ HERO (igual que index)
+========= */
+.hero{
+  margin-top:50px;
+  display:flex;
+  justify-content:center;
+}
+
+.hero-content{
+  max-width:900px;
+  padding:40px 50px;
+  text-align:center;
+
+  background: linear-gradient(
+    to bottom right,
+    rgba(255,255,255,.75),
+    rgba(255,255,255,.55)
+  );
+  backdrop-filter: blur(8px);
+
+  border-radius:22px;
+  box-shadow:0 15px 35px rgba(0,0,0,.08);
+}
+
+.volver-btn{
+  display:inline-block;
+  margin-top:16px;
+  padding:10px 16px;
+  border-radius:12px;
+  text-decoration:none;
+  background:#CFA6B2;
+  color:white;
+}
+
+/* =========
+ EFECTO TEXTO
+========= */
+.contenedor{
+  max-width:900px;
+  margin:40px auto 120px;
+  text-align:center;
+}
+
+.text-mask{
+  font-family: system-ui, sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: center;
+
+  /*TAMAÑO RESPONSIVE Y GRANDE */
+  font-size: 200px;
+  line-height: 1;
+  letter-spacing: 4px;
+
+  /* IMAGEN */
+  background: url("../img/city.webp") center 60%/cover no-repeat; /*CONTROLO LA PARTE DE LA IMAGEN QUE MUESTRO*/
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  /*PRESENTACIÓN */
+  margin: 120px auto;
+  max-width: 95%;
+}
+
+
+/* animación suave opcional */
+.text-mask:hover{
+  transform:scale(1.03);
+  transition:.4s ease;
+}
+
+/* =========
+ FOOTER
+========= */
+.site-footer{
+  text-align:center;
+  padding:30px 10px;
+  background: var(--overlay);
+  box-shadow: 0 -8px 20px rgba(0,0,0,.08);
+}
+
+.site-footer span{
+  color:#b2506c;
+}
