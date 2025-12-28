@@ -147,3 +147,68 @@ body.dark .dark-btn{
 .site-footer span{
   color:#b2506c;
 }
+
+
+/* ===========================
+   📱 RESPONSIVE TEXT-MASK
+=========================== */
+
+/* 🔹 1024px — Portátiles pequeños / tablets en horizontal */
+@media (max-width: 1024px){
+  .text-mask{
+    font-size: 150px;
+    letter-spacing: 3px;
+    margin: 90px auto;
+  }
+}
+
+/* 🔹 820px — Tablets vertical */
+@media (max-width: 820px){
+  .text-mask{
+    font-size: 115px;
+    letter-spacing: 2px;
+    line-height: 1.05;
+    margin: 70px auto;
+  }
+
+  .hero-content{
+    max-width: 92%;
+    padding: 30px;
+  }
+}
+
+/* 🔹 640px — Móviles grandes */
+@media (max-width: 640px){
+  .text-mask{
+    font-size: 85px;
+    margin: 55px auto;
+  }
+
+  /* Si quieres que el botón se adapte mejor */
+  .volver-btn{
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* 🔹 480px — Móviles normales */
+@media (max-width: 480px){
+  .text-mask{
+    font-size: 62px;
+    line-height: 1.1;
+    letter-spacing: 1px;
+    margin: 45px auto;
+  }
+
+  .hero{
+    margin-top: 70px;
+  }
+}
+
+/* 🔹 360px — Móviles pequeños */
+@media (max-width: 360px){
+  .text-mask{
+    font-size: 50px;
+    letter-spacing: 0;
+  }
+}
