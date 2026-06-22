@@ -91,6 +91,30 @@ body.dark .dark-btn{ background:rgba(50,50,50,.75); color:#eee; }
   box-shadow:0 12px 35px rgba(0,0,0,.15);
 }
 
+.before-after::before,
+.before-after::after{
+  position:absolute;
+  z-index:2;
+  top:18px;
+  padding:6px 10px;
+  border-radius:999px;
+  color:white;
+  background:rgba(20,20,20,.58);
+  font-size:.78rem;
+  font-weight:700;
+  backdrop-filter:blur(8px);
+}
+
+.before-after::before{
+  content:"ANTES";
+  left:18px;
+}
+
+.before-after::after{
+  content:"DESPUÉS";
+  right:18px;
+}
+
 .img{
   position:absolute;
   inset:0;
@@ -135,6 +159,34 @@ body.dark .dark-btn{ background:rgba(50,50,50,.75); color:#eee; }
   background:#cfa6b2;
   border:3px solid white;
   box-shadow:0 4px 10px rgba(0,0,0,.25);
+}
+
+.slider::-moz-range-thumb{
+  width:22px;
+  height:22px;
+  border-radius:50%;
+  background:#cfa6b2;
+  border:3px solid white;
+  box-shadow:0 4px 10px rgba(0,0,0,.25);
+}
+
+@media(max-width:700px){
+  .contenedor{
+    margin-top:28px;
+  }
+
+  .before-after{
+    aspect-ratio:4 / 3;
+    border-radius:18px;
+  }
+
+  .img-after{
+    background-position:center;
+  }
+
+  .slider{
+    width:72%;
+  }
 }
 
 

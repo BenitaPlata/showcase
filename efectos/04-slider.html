@@ -6,6 +6,7 @@
   <title>Slider sin JavaScript</title>
 
   <link rel="stylesheet" href="../css/04-slider.css">
+  <link rel="stylesheet" href="../css/shared.css">
   
 
 </head>
@@ -35,23 +36,23 @@
   <section class="slider">
 
     <!-- Controles -->
-    <input type="radio" name="slide" id="s1" checked>
-    <input type="radio" name="slide" id="s2">
-    <input type="radio" name="slide" id="s3">
+    <input type="radio" name="slide" id="s1" aria-label="Mostrar imagen 1" checked>
+    <input type="radio" name="slide" id="s2" aria-label="Mostrar imagen 2">
+    <input type="radio" name="slide" id="s3" aria-label="Mostrar imagen 3">
 
     <!-- Imágenes -->
     <div class="slides">
 
       <div class="img">
-        <img src="../img/slide1.webp" alt="">
+        <img src="../img/slide1.webp" alt="Paisaje de la primera diapositiva">
       </div>
 
       <div class="img">
-        <img src="../img/slide2.webp" alt="">
+        <img src="../img/slide2.webp" alt="Paisaje de la segunda diapositiva">
       </div>
 
       <div class="img">
-        <img src="../img/slide3.webp" alt="">
+        <img src="../img/slide3.webp" alt="Paisaje de la tercera diapositiva">
       </div>
 
      
@@ -60,10 +61,10 @@
 
     <!-- Botones -->
     <div class="nav">
-      <label for="s1"></label>
-      <label for="s2"></label>
-      <label for="s3"></label>
-    
+      <label for="s1" aria-label="Ir a imagen 1"></label>
+      <label for="s2" aria-label="Ir a imagen 2"></label>
+      <label for="s3" aria-label="Ir a imagen 3"></label>
+    </div>
 
   </section>
 

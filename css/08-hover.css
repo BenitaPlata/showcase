@@ -84,6 +84,7 @@ body.dark .dark-btn{
   cursor:pointer;
 
   height: 480px; 
+  transition:transform .35s ease, box-shadow .35s ease;
 }
 
 .hover-img img{
@@ -144,6 +145,18 @@ body.dark .dark-btn{
   }
   .hero-content{
     padding:28px;
+  }
+
+  .hover-img{
+    height:380px;
+  }
+
+  .caption{
+    right:18px;
+    padding:10px 12px;
+    border-radius:12px;
+    background:rgba(20,20,20,.58);
+    backdrop-filter:blur(8px);
   }
 }
 
